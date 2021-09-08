@@ -1,0 +1,21 @@
+{
+  "name": "telegram_30day",
+  "version": "1.0.0",
+  "description": "ithome 鐵人賽，用來撰寫telegram開發的bot和開發的dos介面的筆記",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frenkieli/telegram_30day.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frenkieli/telegram_30day/issues"
+  },
+  "homepage": "https://github.com/Frenkieli/telegram_30day#readme"
+}
