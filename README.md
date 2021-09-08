@@ -1,0 +1,2 @@
+# telegram_30day
+ithome 鐵人賽，用來撰寫telegram開發的bot和開發的dos介面的筆記
