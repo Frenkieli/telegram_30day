@@ -4,7 +4,7 @@
   "description": "ithome 鐵人賽，用來撰寫telegram開發的bot和開發的dos介面的筆記",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Frenkieli/telegram_30day/issues"
   },
-  "homepage": "https://github.com/Frenkieli/telegram_30day#readme"
+  "homepage": "https://github.com/Frenkieli/telegram_30day#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
