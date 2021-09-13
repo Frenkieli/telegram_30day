@@ -10,4 +10,4 @@ https://api.telegram.org/bot1978609847:AAHg8e-V_bNx78PCZok8uYzN8BYwlRScfgA/delet
 
 
 掛載
-https://api.telegram.org/bot1978609847:AAHg8e-V_bNx78PCZok8uYzN8BYwlRScfgA/setWebhook?url=https://0334-211-75-15-93.ngrok.io
+https://api.telegram.org/bot1978609847:AAHg8e-V_bNx78PCZok8uYzN8BYwlRScfgA/setWebhook?url=https://21b0-211-75-15-93.ngrok.io

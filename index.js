@@ -1,4 +1,5 @@
-var http = require("http");
+const http = require("http");
+const { receiveTelegram } = require("./botHook/main");
 
 var server = http.createServer(async function (req, res) {
   let url = req.url.split("?")[0];
@@ -17,25 +18,9 @@ var server = http.createServer(async function (req, res) {
   if (url === "/") {
     res.writeHead(200, { "Content-Type": "application/json" });
     // 實作判斷請求
-    if (req.method === "GET") {
-      if (paramrter) {
-        res.write(
-          JSON.stringify({
-            message: "Hello GET Parameter",
-            paramrter: paramrter,
-          })
-        );
-      } else {
-        res.write(JSON.stringify({ message: "Hello GET no Parameter" }));
-      }
-      res.end();
-    } else if (req.method === "POST") {
+    if (req.method === "POST") {
       if (data) {
-        res.write(JSON.stringify({ message: "Hello POST data", data: data }));
-        console.log("post data");
-      } else {
-        res.write(JSON.stringify({ message: "Hello POST no data" }));
-        console.log("post no data");
+        receiveTelegram(data, res);
       }
       res.end();
     } else {
