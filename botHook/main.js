@@ -1,8 +1,12 @@
-function receiveTelegram(data, res) {
+const { sendBotMessage } = require("./telegramItem");
+
+function receiveTelegram(data) {
   console.log(data);
-  res.write(JSON.stringify({
-    message: "gogo"
-  }))
+  sendBotMessage({
+    chat_id : data.message.chat.id,
+    method: "sendMessage",
+    text: data.message.text
+  })
 }
 
 module.exports = {

@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Frenkieli/telegram_30day#readme",
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.4"
   }
 }
