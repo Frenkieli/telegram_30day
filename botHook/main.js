@@ -1,11 +1,14 @@
 const { sendBotMessage } = require("./telegramItem");
 
 function receiveTelegram(data) {
-  if ("media_group_id" in data.message) {
-    multitudeForwardHandler(data);
-  } else {
-    data = parseDataToTelegram(data);
-    sendBotMessage(data);
+  // 確保只有 message 訊息可以被處理
+  if (data.message){
+    if ("media_group_id" in data.message) {
+      multitudeForwardHandler(data);
+    } else {
+      data = parseDataToTelegram(data);
+      sendBotMessage(data);
+    }
   }
 }
 
