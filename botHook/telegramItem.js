@@ -10,21 +10,19 @@ function sendBotMessage(data) {
     "1978609847:AAHg8e-V_bNx78PCZok8uYzN8BYwlRScfgA" +
     "/";
   // 如果他是 text 訊息的話就這樣回聲
-  if (data.text) {
-    axios({
-      url,
-      method: "post",
-      data,
+  axios({
+    url,
+    method: "post",
+    data,
+  })
+    .then((data) => {
+      console.log("Send Telegram:");
+      console.log(data.data);
     })
-      .then((data) => {
-        console.log("Send Telegram:");
-        console.log(data.data);
-      })
-      .catch((e) => {
-        console.log("Send Telegram: Error:");
-        console.log(e);
-      });
-  }
+    .catch((e) => {
+      console.log("Send Telegram: Error:");
+      console.log(e);
+    });
 }
 
 module.exports = {
