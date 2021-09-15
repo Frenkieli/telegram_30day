@@ -1,4 +1,5 @@
 const consoleItem = require("../interface/consoleItem");
+const input = require("input");
 
 class ViewPrinter {
   
@@ -46,6 +47,20 @@ class ViewPrinter {
         }, i * 100);
       } 
     })  
+  }
+
+
+  /**
+   * @description 主要畫面選單
+   *
+   * @memberof ViewPrinter
+   */
+  async mainMenu() {
+    let option = ["登入", "離開"];
+
+    let selectOption = await input.select("你好：", option);
+
+    return selectOption;
   }
 
 }
