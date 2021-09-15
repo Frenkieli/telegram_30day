@@ -4,7 +4,7 @@
   "description": "ithome 鐵人賽，用來撰寫telegram開發的bot和開發的dos介面的筆記",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

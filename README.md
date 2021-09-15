@@ -14,3 +14,6 @@ https://api.telegram.org/bot1978609847:AAHg8e-V_bNx78PCZok8uYzN8BYwlRScfgA/setWe
 
 telegram bot api
 https://core.telegram.org/bots/api#available-methods
+
+console 顏色參考
+https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color

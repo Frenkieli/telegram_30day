@@ -1,5 +1,6 @@
 const http = require("http");
 const { receiveTelegram } = require("./botHook/main");
+const consoleItem = require("./interface/consoleItem");
 
 var server = http.createServer(async function (req, res) {
   let url = req.url.split("?")[0];
@@ -35,7 +36,11 @@ var server = http.createServer(async function (req, res) {
 
 server.listen(3000);
 
-console.log("noder server is start");
+consoleItem.addText("noder server is start", "cyan");
+consoleItem.addText("noder server is connect", "blue");
+consoleItem.addText("noder server is running");
+consoleItem.addText("noder server error", "yellow");
+consoleItem.addText("noder server %sshut down", "red");
 
 /**
  * @description 用來確認是否有帶參數
