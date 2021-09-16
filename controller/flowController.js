@@ -38,12 +38,23 @@ class FlowController {
       case "登入":
         break;
       case "離開":
-        console.log(selectOption);
+        this.leaveApp();
         break;
       default:
         break;
     }
-    this.start();
+  }
+
+  /**
+   * @description 離開應用程式
+   *
+   * @memberof FlowController
+   */
+  async leaveApp() {
+    viewPrinter.clearView();
+    console.log("按 任意鍵 離開程式");
+    await viewPrinter.pressToContinue();
+    process.exit();
   }
 }
 

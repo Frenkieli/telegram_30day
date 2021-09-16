@@ -2,14 +2,13 @@ const consoleItem = require("../interface/consoleItem");
 const input = require("input");
 
 class ViewPrinter {
-  
   constructor() {}
-  
+
   /**
    * @description 確保都拿到同一個實例
    *
    * @static
-   * @return {*} 
+   * @return {*}
    * @memberof ConsoleItem
    */
   static getInstance() {
@@ -18,7 +17,6 @@ class ViewPrinter {
     }
     return this.instance;
   }
-
 
   /**
    * @description 歡迎你
@@ -35,20 +33,19 @@ class ViewPrinter {
         "============                               ============",
         "=======================================================",
         "=======================================================",
-      ]
+      ];
       console.log("\x1b[36m");
-      for( let i = 0 ; i < str.length ; i++ ) {
+      for (let i = 0; i < str.length; i++) {
         setTimeout(() => {
           console.log(str[i]);
-          if(i === str.length -1) {
+          if (i === str.length - 1) {
             console.log("\x1b[0m");
             resolve();
-          };
+          }
         }, i * 100);
-      } 
-    })  
+      }
+    });
   }
-
 
   /**
    * @description 主要畫面選單
@@ -63,6 +60,37 @@ class ViewPrinter {
     return selectOption;
   }
 
+  /**
+   * @description 按下去任何按鍵來繼續程式
+   *
+   * @return {*}
+   * @memberof InterfaceClass
+   */
+  async pressToContinue() {
+    return new Promise((resolve) => {
+      const handler = () => {
+        process.stdin.setRawMode(false);
+        process.stdin.pause();
+        process.stdout.write("\n");
+        resolve();
+      };
+
+      process.stdin.resume();
+      process.stdin.setRawMode(true);
+      process.stdin.once("data", handler);
+    });
+  }
+
+  /**
+   * @description 清空畫面
+   *
+   * @memberof ViewPrinter
+   */
+  async clearView() {
+    process.stdout.write(
+      process.platform === "win32" ? "\x1Bc" : "\x1B[2J\x1B[3J\x1B[H"
+    );
+  }
 }
 
 let viewPrinter = ViewPrinter.getInstance();
