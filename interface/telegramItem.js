@@ -5,6 +5,7 @@ const { Logger } = require("telegram/extensions");
 const input = require("input");
 
 const GetInstanceClass = require("../component/GetInstanceClass");
+const dataCeneter = require("../dataCenter");
 
 Logger.setLevel("none"); // 這邊可以隱藏很多關於 telegram 的運作細節
 
@@ -46,8 +47,15 @@ class TelegramItem extends GetInstanceClass {
 
     console.log("");
     console.log("\x1b[36m", "成功登入");
-    console.log("");
+    console.log();
+    let user = await this.client.getMe();
+    dataCeneter.setData("setUser", {
+      id: user.id,
+      username: user.username,
+      name: user.lastName + user.firstName
+    })
     this.client.session.save();
+    // 登入成功寄給你的 telegram 一個訊息
     await this.client.sendMessage("me", {
       message: "node sevret is online! " + new Date().toLocaleString(),
     });

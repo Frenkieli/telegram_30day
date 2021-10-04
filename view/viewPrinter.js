@@ -2,6 +2,8 @@ const consoleItem = require("../interface/consoleItem");
 const input = require("input");
 const GetInstanceClass = require("../component/GetInstanceClass");
 
+const dataCenter = require("../dataCenter");
+
 class ViewPrinter extends GetInstanceClass{
   constructor() {
     super();
@@ -44,7 +46,7 @@ class ViewPrinter extends GetInstanceClass{
   async mainMenu() {
     let option = ["登入", "離開"];
 
-    let selectOption = await input.select("你好：", option);
+    let selectOption = await input.select(dataCenter.getData("user").name + " 你好：", option);
 
     return selectOption;
   }

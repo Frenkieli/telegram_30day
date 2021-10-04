@@ -8,7 +8,13 @@ class DataCenter extends GetInstanceClass {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      user: {
+        id: "X",
+        username: "X",
+        name: "遊客"
+      }
+    };
   }
 
   /**
@@ -20,8 +26,8 @@ class DataCenter extends GetInstanceClass {
    */
   getData(key) {
     switch (key) {
-      case "example":
-        return this.state[key];
+      case "user":
+        return this.state["user"];
       default:
         break;
     }
@@ -36,8 +42,8 @@ class DataCenter extends GetInstanceClass {
    */
   setData(key, data) {
     switch (key) {
-      case "example":
-        this.state[key] = data;
+      case "setUser":
+        this.state["user"] = data;
         break;
       default:
         break;
