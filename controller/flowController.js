@@ -26,6 +26,7 @@ class FlowController extends GetInstanceClass {
     let selectOption = await viewPrinter.mainMenu();
     switch (selectOption) {
       case "登入":
+        this.loginTelegram();
         break;
       case "離開":
         this.leaveApp();
@@ -33,6 +34,17 @@ class FlowController extends GetInstanceClass {
       default:
         break;
     }
+  }
+
+  /**
+   * @description 登入 telegram
+   *
+   * @memberof FlowController
+   */
+  async loginTelegram() {
+    await telegramItem.login();
+
+    this.mainMenu();
   }
 
   /**
