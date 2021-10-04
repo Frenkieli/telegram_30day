@@ -1,10 +1,14 @@
+const GetInstanceClass = require("../component/GetInstanceClass");
+
+
 /**
  * @description 自己定義的 console 檔案
  *
  * @class ConsoleItem
  */
-class ConsoleItem {
+class ConsoleItem extends GetInstanceClass{
   constructor() {
+    super();
     this.message = [];
     this.time = null;
     this.color = {
@@ -29,20 +33,6 @@ class ConsoleItem {
       white: "\x1b[47m",
       none: "",
     };
-  }
-
-  /**
-   * @description 確保都拿到同一個實例
-   *
-   * @static
-   * @return {*} 
-   * @memberof ConsoleItem
-   */
-  static getInstance() {
-    if (!this.instance) {
-      this.instance = new this();
-    }
-    return this.instance;
   }
 
   /**

@@ -1,21 +1,10 @@
 const consoleItem = require("../interface/consoleItem");
 const input = require("input");
+const GetInstanceClass = require("../component/GetInstanceClass");
 
-class ViewPrinter {
-  constructor() {}
-
-  /**
-   * @description 確保都拿到同一個實例
-   *
-   * @static
-   * @return {*}
-   * @memberof ConsoleItem
-   */
-  static getInstance() {
-    if (!this.instance) {
-      this.instance = new this();
-    }
-    return this.instance;
+class ViewPrinter extends GetInstanceClass{
+  constructor() {
+    super();
   }
 
   /**

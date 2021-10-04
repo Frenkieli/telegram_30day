@@ -1,21 +1,10 @@
 const viewPrinter = require("../view/viewPrinter");
 const telegramItem = require("../interface/telegramItem");
+const GetInstanceClass = require("../component/GetInstanceClass");
 
-class FlowController {
-  constructor() {}
-
-  /**
-   * @description 確保都拿到同一個實例
-   *
-   * @static
-   * @return {*}
-   * @memberof ConsoleItem
-   */
-  static getInstance() {
-    if (!this.instance) {
-      this.instance = new this();
-    }
-    return this.instance;
+class FlowController extends GetInstanceClass {
+  constructor() {
+    super();
   }
 
   /**

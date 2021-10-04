@@ -2,23 +2,13 @@ const { TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 const { Logger } = require("telegram/extensions");
 
+const GetInstanceClass = require("../component/GetInstanceClass");
+
 Logger.setLevel("none"); // 這邊可以隱藏很多關於 telegram 的運作細節
 
-class TelegramItem {
-  constructor() {}
-
-  /**
-   * @description 確保都拿到同一個實例
-   *
-   * @static
-   * @return {*}
-   * @memberof ConsoleItem
-   */
-  static getInstance() {
-    if (!this.instance) {
-      this.instance = new this();
-    }
-    return this.instance;
+class TelegramItem extends GetInstanceClass{
+  constructor() {
+    super();
   }
 
   /**
